@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paramee Samarathunga — Business Analyst Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1117;
+    --ink-muted: #4a4d5a;
+    --ink-faint: #9297a5;
+    --surface: #ffffff;
+    --surface-2: #f5f4f1;
+    --surface-3: #eceae5;
+    --accent: #1a3a5c;
+    --accent-mid: #2d5a8e;
+    --accent-light: #e8f0f9;
+    --gold: #b8860b;
+    --gold-light: #fdf6e3;
+    --teal: #0f5c52;
+    --teal-light: #e4f4f2;
+    --border: #dddbd5;
+    --radius: 4px;
+    --radius-lg: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface-2);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--accent);
+    color: #fff;
+    padding: 5rem 2.5rem 4.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 30%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.4rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: rgba(255,255,255,0.72);
+  }
+  .hero-tagline {
+    font-size: 16px;
+    color: rgba(255,255,255,0.78);
+    max-width: 640px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pill {
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── STATS STRIP ─── */
+  .stats-strip {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .stats-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    divide-x: 1px solid var(--border);
+  }
+  .stat-item {
+    padding: 1.6rem 1.8rem;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--ink-faint);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2.5rem;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin-top: 4px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .about-text {
+    font-size: 15.5px;
+    color: var(--ink-muted);
+    line-height: 1.75;
+  }
+  .about-text strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-content: start;
+  }
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.1rem;
+  }
+  .skill-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .skill-icon.blue { background: var(--accent-light); }
+  .skill-icon.gold { background: var(--gold-light); }
+  .skill-icon.teal { background: var(--teal-light); }
+  .skill-card h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .skill-card p {
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    line-height: 1.4;
+  }
+
+  /* ─── PROJECTS ─── */
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.25s;
+  }
+  .project-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+  }
+  .project-header {
+    padding: 2rem 2.2rem 1.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .project-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+  }
+  .project-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .project-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: var(--accent-light); color: var(--accent); }
+  .tag-gold { background: var(--gold-light); color: var(--gold); }
+  .tag-teal { background: var(--teal-light); color: var(--teal); }
+  .tag-slate { background: #f0eef8; color: #4a3a8c; }
+  .tag-rose { background: #fdf0f3; color: #8c3a55; }
+
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .project-client {
+    font-size: 13px;
+    color: var(--ink-faint);
+    font-weight: 400;
+  }
+  .project-body {
+    padding: 1.6rem 2.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.4rem;
+  }
+  .project-col-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .project-list {
+    list-style: none;
+  }
+  .project-list li {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+    padding: 4px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  .project-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--ink-faint);
+  }
+  .project-metrics {
+    padding: 1.4rem 2.2rem;
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .metric-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .metric-desc {
+    font-size: 11px;
+    color: var(--ink-faint);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .metric-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+  }
+  .project-outcome-badge {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal);
+    background: var(--teal-light);
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+
+  /* ─── CAPABILITIES ─── */
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  .cap-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.4rem 1.5rem;
+  }
+  .cap-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+  }
+  .cap-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .cap-card p {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-strip {
+    background: var(--accent);
+    color: #fff;
+    padding: 3.5rem 2.5rem;
+  }
+  .contact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .contact-text h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .contact-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+  }
+  .contact-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .contact-btn {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: var(--radius-lg);
+    transition: all 0.2s;
+  }
+  .contact-btn.primary {
+    background: #fff;
+    color: var(--accent);
+  }
+  .contact-btn.primary:hover {
+    background: rgba(255,255,255,0.9);
+  }
+  .contact-btn.secondary {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.85);
+  }
+  .contact-btn.secondary:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+  footer {
+    background: var(--surface-3);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 700px) {
+    nav { padding: 0 1.2rem; }
+    .nav-links { display: none; }
+    .hero, .section { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+    .about-grid, .project-body { grid-template-columns: 1fr; }
+    .capabilities-grid { grid-template-columns: 1fr 1fr; }
+    .project-metrics { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .project-outcome-badge { margin-left: 0; }
+    .contact-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Paramee Samarathunga</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Business Analyst · Requirements · Process · Delivery</p>
+    <h1>Turning complexity<br>into <em>clarity that moves</em><br>organisations forward.</h1>
+    <p class="hero-tagline">
+      I bridge the gap between technical systems and business outcomes structuring knowledge, mapping workflows, and building the analytical foundations that help teams decide faster and operate smarter.
+    </p>
+    <div class="hero-pills">
+      <span class="pill">Requirements Analysis</span>
+      <span class="pill">Process Optimisation</span>
+      <span class="pill">Knowledge Architecture</span>
+      <span class="pill">Stakeholder Management</span>
+      <span class="pill">AI-Augmented Operations</span>
+      <span class="pill">Compliance &amp; Regulated Industries</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number">50K+</div>
+      <div class="stat-label">Monthly organic reach</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">75%</div>
+      <div class="stat-label">AHT reduction delivered</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">50%</div>
+      <div class="stat-label">Turnaround time cut</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">100K+</div>
+      <div class="stat-label">End-user site visits driven</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-header">
+    <h2 class="section-title">About</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p class="about-text">
+        I approach business analysis the way a journalist approaches an investigation with <strong>deep research, structured synthesis, and a commitment to precision</strong>. Across fintech, enterprise ERP, and regulated industries, I've designed the knowledge systems, process frameworks, and analytical structures that allow complex organisations to operate with clarity.<br><br>
+        My work sits at the intersection of <strong>systems thinking and operational execution</strong>. I translate fragmented inputs from engineering, product, compliance, and operations into coherent frameworks using requirements documents, knowledge architectures, decision intelligence models that give teams the foundation to build on.<br><br>
+        I bring <strong>the curiosity of an analyst, the rigour of a systems thinker, and the execution discipline</strong> of someone who ships without compromising quality.
+      </p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon blue">📋</div>
+        <h4>Business Requirements</h4>
+        <p>Eliciting, structuring &amp; validating requirements across complex stakeholder groups</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon gold">🗺️</div>
+        <h4>Process Mapping</h4>
+        <p>End-to-end workflow design with compliance &amp; operational constraints in scope</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon teal">🧠</div>
+        <h4>Knowledge Architecture</h4>
+        <p>Structuring information systems for AI agents, search &amp; human discoverability</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon blue">📊</div>
+        <h4>Data-Driven Decisions</h4>
+        <p>Building analytical frameworks that connect metrics to strategic outcomes</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon gold">⚖️</div>
+        <h4>Regulated Industries</h4>
+        <p>Open banking, CIW compliance, ERP governance &amp; partner documentation</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon teal">🤖</div>
+        <h4>AI-Augmented Operations</h4>
+        <p>Designing knowledge layers for AI agents operating in live environments</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<div style="background: var(--surface-2); padding: 0.5px 0;">
+<section class="section" id="projects">
+  <div class="section-header">
+    <h2 class="section-title">Past Projects</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- PROJECT 1 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-number">01</span>
+        <span class="project-tag tag-blue">Compliance Documentation</span>
+        <span class="project-tag tag-gold">Fintech / Open Banking</span>
+      </div>
+      <h3 class="project-title">WSO2 Open Banking — Release Documentation</h3>
+      <p class="project-client">WSO2 · Global open-source middleware company powering open banking compliance</p>
+    </div>
+    <div class="project-body">
+      <div>
+        <p class="project-col-title">Business Problem</p>
+        <ul class="project-list">
+          <li>Multi-module technical release needed a coherent public-facing narrative for developers, partners, and compliance stakeholders</li>
+          <li>Fragmented, last-minute inputs from engineering, product, and compliance teams</li>
+          <li>Precision required to eliminate errors surfacing across partner networks and summit presentations</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Approach & Methodology</p>
+        <ul class="project-list">
+          <li>Applied GTA methodology to impose structure on fragmented, late-arriving inputs</li>
+          <li>Developed a What's New / What's Changed framework to organise complex release information</li>
+          <li>Consolidated stakeholder input across engineering, product, and compliance into a single source of truth</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Outcome</p>
+        <ul class="project-list">
+          <li>Delivered on deadline and verified by WSO2 partners across all channels</li>
+          <li>Distributed across blogs, summit presentations, and partner documentation</li>
+          <li>Established a replicable documentation framework for future releases</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-metrics">
+      <div class="metric-item">
+        <span class="metric-value">8</span>
+        <span class="metric-desc">Partners verified</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">3</span>
+        <span class="metric-desc">Distribution channels</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">74</span>
+        <span class="metric-desc">Lines of markdown published</span>
+      </div>
+      <div class="project-outcome-badge">
+        ✓ Verified across all partner channels
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-number">02</span>
+        <span class="project-tag tag-teal">Market Analysis</span>
+        <span class="project-tag tag-slate">SaaS / Product Strategy</span>
+      </div>
+      <h3 class="project-title">Creately — Market Repositioning Analysis &amp; Content Strategy</h3>
+      <p class="project-client">Creately · SaaS platform for visual collaboration</p>
+    </div>
+    <div class="project-body">
+      <div>
+        <p class="project-col-title">Business Problem</p>
+        <ul class="project-list">
+          <li>Creately sat in an ambiguous market position between "diagramming tool" and "collaboration platform"</li>
+          <li>Needed a credible, research-backed repositioning narrative to compete on a new category axis</li>
+          <li>Required scalable content architecture and not one-off pieces using a replicable research-driven framework</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Approach & Methodology</p>
+        <ul class="project-list">
+          <li>Conducted competitive whitespace analysis between adjacent product categories</li>
+          <li>Mapped market narrative signals to identify credible repositioning thesis</li>
+          <li>Built research-driven content framework scalable across topics and customer segments</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Outcome</p>
+        <ul class="project-list">
+          <li>10+ long-form pieces published, each structured as a standalone editorial thesis</li>
+          <li>50K+ monthly organic visits sustained with 6–11 min average engagement time</li>
+          <li>Positioned Creately's product narrative in a defensible, differentiated market space</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-metrics">
+      <div class="metric-item">
+        <span class="metric-value">50K+</span>
+        <span class="metric-desc">Monthly organic visits</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">6–11 min</span>
+        <span class="metric-desc">Average read time</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">10+</span>
+        <span class="metric-desc">Strategic pieces published</span>
+      </div>
+      <div class="project-outcome-badge">
+        ✓ Sustained organic growth
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-number">03</span>
+        <span class="project-tag tag-rose">Multi-Sector Strategy</span>
+        <span class="project-tag tag-gold">Regulated Industries</span>
+      </div>
+      <h3 class="project-title">Enliven Designers — Editorial Strategy Across Healthcare &amp; Travel</h3>
+      <p class="project-client">Enliven Designers · Digital agency serving healthcare and travel clients</p>
+    </div>
+    <div class="project-body">
+      <div>
+        <p class="project-col-title">Business Problem</p>
+        <ul class="project-list">
+          <li>Two distinct regulated sectors: <strong>Healthcare (CIW compliance)</strong> and <strong>Travel</strong> requiring separate, expert-level editorial strategies</li>
+          <li>Healthcare content had to meet Care Inspectorate Wales standards without direct industry background</li>
+          <li>10-month content calendar for travel brand ensuring consistent quality at volume</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Approach & Methodology</p>
+        <ul class="project-list">
+          <li>Conducted primary research into CIW regulatory standards to build a compliance-first content framework</li>
+          <li>Integrated SEO, GEO, and AEO signals into every editorial decision optimising for both human and AI search surfaces</li>
+          <li>Developed a sustainability editorial voice that balanced audience growth with quality consistency</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Outcome</p>
+        <ul class="project-list">
+          <li>100K+ visits delivered to travel site; 50+ monthly customer inquiries via website</li>
+          <li>Healthcare content met CIW compliance standards across all published pieces</li>
+          <li>Established repeatable editorial governance framework across both sectors</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-metrics">
+      <div class="metric-item">
+        <span class="metric-value">100K+</span>
+        <span class="metric-desc">Travel site visits</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">50+</span>
+        <span class="metric-desc">Monthly customer inquiries</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">10 mo.</span>
+        <span class="metric-desc">Editorial calendar sustained</span>
+      </div>
+      <div class="project-outcome-badge">
+        ✓ Leads &amp; engagement increased
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 4 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-number">04</span>
+        <span class="project-tag tag-blue">Knowledge Management</span>
+        <span class="project-tag tag-teal">Enterprise ERP</span>
+      </div>
+      <h3 class="project-title">IFS Cloud — Documentation Wiki &amp; Knowledge Architecture</h3>
+      <p class="project-client">IFS · Global ERP leader serving 100,000+ customers worldwide</p>
+    </div>
+    <div class="project-body">
+      <div>
+        <p class="project-col-title">Business Problem</p>
+        <ul class="project-list">
+          <li>Complex ERP workflows needed to be documented for mixed-expertise readers from technical engineers to end users</li>
+          <li>Existing documentation was architecture-centric, not user-workflow-centric</li>
+          <li>Compliance and troubleshooting content needed integration without fragmenting the narrative</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Approach & Methodology</p>
+        <ul class="project-list">
+          <li>Re-architected documentation around user journeys and workflow outcomes, not system structure</li>
+          <li>Applied GEO-optimised architecture for discoverability across AI and traditional search surfaces</li>
+          <li>Established editorial governance standards and content templates across all article types</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Outcome</p>
+        <ul class="project-list">
+          <li>Average Handle Time reduced by 75% across benefiting teams</li>
+          <li>188+ article views; content serving multiple internal teams simultaneously</li>
+          <li>Scalable knowledge framework available for ongoing product documentation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-metrics">
+      <div class="metric-item">
+        <span class="metric-value">75%</span>
+        <span class="metric-desc">AHT reduction</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">188+</span>
+        <span class="metric-desc">Article views</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">5</span>
+        <span class="metric-desc">Teams benefited</span>
+      </div>
+      <div class="project-outcome-badge">
+        ✓ Operational efficiency gained
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 5 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-number">05</span>
+        <span class="project-tag tag-slate">AI Systems Design</span>
+        <span class="project-tag tag-teal">Decision Intelligence</span>
+      </div>
+      <h3 class="project-title">IFS Copilot — AI Agent Knowledge Architecture</h3>
+      <p class="project-client">IFS · Enterprise AI agent operating in live production environment</p>
+    </div>
+    <div class="project-body">
+      <div>
+        <p class="project-col-title">Business Problem</p>
+        <ul class="project-list">
+          <li>AI research assistant needed a structured knowledge layer to deliver context-aware, accurate responses</li>
+          <li>Branching conditional logic across complex ERP workflows had to be encoded in retrievable formats</li>
+          <li>Errors carried direct operational consequences with precision being non-negotiable</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Approach & Methodology</p>
+        <ul class="project-list">
+          <li>Designed a decision intelligence framework mapping conditional logic to retrievable knowledge structures</li>
+          <li>Connected and curated knowledge sources across non-native platforms (Jira and Confluence)</li>
+          <li>Validated agent responses across 4 real operational scenarios before deployment</li>
+        </ul>
+      </div>
+      <div>
+        <p class="project-col-title">Outcome</p>
+        <ul class="project-list">
+          <li>50% reduction in turnaround time for AI-assisted queries</li>
+          <li>Agent deployed and active in live production operations</li>
+          <li>Decision intelligence layer enabling data-driven operational responses at scale</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-metrics">
+      <div class="metric-item">
+        <span class="metric-value">50%</span>
+        <span class="metric-desc">Turnaround reduction</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">4</span>
+        <span class="metric-desc">Scenarios validated</span>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric-item">
+        <span class="metric-value">Live</span>
+        <span class="metric-desc">Agent in production</span>
+      </div>
+      <div class="project-outcome-badge">
+        ✓ Active in live operations
+      </div>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<!-- CAPABILITIES -->
+<section class="section" id="capabilities">
+  <div class="section-header">
+    <h2 class="section-title">Core Capabilities</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="capabilities-grid">
+    <div class="cap-card">
+      <div class="cap-dot" style="background: #1a3a5c;"></div>
+      <h4>Requirements Elicitation &amp; Documentation</h4>
+      <p>Gathering, structuring and validating business and technical requirements from multi-disciplinary stakeholders under deadline pressure.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-dot" style="background: #0f5c52;"></div>
+      <h4>Process Architecture &amp; Workflow Design</h4>
+      <p>Mapping end-to-end workflows from user perspective, embedding compliance constraints and identifying optimisation opportunities.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-dot" style="background: #b8860b;"></div>
+      <h4>Knowledge Management Systems</h4>
+      <p>Designing information architectures optimised for human discoverability, AI retrieval, and long-term scalability across enterprise platforms.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-dot" style="background: #4a3a8c;"></div>
+      <h4>Stakeholder Management</h4>
+      <p>Consolidating inputs from engineering, product, compliance, and operations into coherent deliverables that satisfy all parties.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-dot" style="background: #8c3a55;"></div>
+      <h4>Competitive &amp; Market Analysis</h4>
+      <p>Research-driven analysis of market positioning, whitespace identification, and narrative frameworks for product differentiation.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-dot" style="background: #2d5a8e;"></div>
+      <h4>AI Agent &amp; Decision Intelligence</h4>
+      <p>Structuring conditional logic and knowledge datasets to power AI agents operating in high-stakes, regulated environments.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-strip" id="contact">
+  <div class="contact-inner">
+    <div class="contact-text">
+      <h2>Let's work together.</h2>
+      <p>Open to BA, knowledge management, and AI-augmented operations roles.</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://linkedin.com" class="contact-btn primary">LinkedIn Profile</a>
+      <a href="https://drive.google.com/drive/folders/1hfFFos2QWw9g3e4aDhLbt89z0z27aHlT?usp=sharing" class="contact-btn secondary">See More of My Projects</a>
+      <a href="https://medium.com" class="contact-btn secondary">Medium Blog</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Paramee Samarathunga · Business Analyst Portfolio · 2025</p>
+</footer>
+
+</body>
+</html>
