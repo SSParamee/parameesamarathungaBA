@@ -1,7 +1,7 @@
-# Paramee Samarathunga — Business Analyst Portfolio
+# Paramee Samarathunga - Business Analyst Portfolio
 
 This repository hosts the source code and assets for my **Business Analyst & Knowledge Architect portfolio site**.  
-It showcases my work across fintech, SaaS, regulated industries, and enterprise ERP — with a focus on **knowledge architecture, process optimisation, and AI-augmented operations**.
+It showcases my work across fintech, SaaS, regulated industries, and enterprise ERP with a focus on **knowledge architecture, process optimisation, and AI-augmented operations**.
 
 ---
 
@@ -25,23 +25,23 @@ Key highlights:
 ---
 
 ## 🧩 Featured Projects
-1. **WSO2 Open Banking — Release Documentation**  
+1. **WSO2 Open Banking - Release Documentation**  
    - Applied GTA methodology to consolidate fragmented inputs into a coherent release note.  
    - Verified across partner networks and summit presentations.  
 
-2. **Creately — Market Repositioning Analysis & Content Strategy**  
+2. **Creately - Market Repositioning Analysis & Content Strategy**  
    - Authored 10+ research-driven long-form pieces.  
    - Sustained **50K+ monthly organic visits** with 6–11 min engagement.  
 
-3. **Enliven Designers — Editorial Strategy Across Healthcare & Travel**  
+3. **Enliven Designers - Editorial Strategy Across Healthcare & Travel**  
    - Built CIW-compliant healthcare content and a 10-month travel editorial calendar.  
    - Delivered **100K+ site visits** and 50+ monthly inquiries.  
 
-4. **IFS Cloud — Documentation Wiki & Knowledge Architecture**  
+4. **IFS Cloud - Documentation Wiki & Knowledge Architecture**  
    - Re-architected ERP documentation around user workflows.  
    - Achieved **75% AHT reduction** across teams.  
 
-5. **IFS Copilot — AI Agent Knowledge Architecture**  
+5. **IFS Copilot - AI Agent Knowledge Architecture**  
    - Designed a decision intelligence framework for live AI agent operations.  
    - Reduced turnaround time by **50%** for AI-assisted queries.  
 
@@ -59,7 +59,7 @@ Screenshots and live links are included in the portfolio site (`index.html`) und
 
 ## 🔗 Live Portfolio
 Visit the live portfolio site here:  
-👉 [Paramee Samarathunga — Business Analyst Portfolio](https://ssparamee.github.io/parameesamarathungaBA/)
+👉 [Paramee Samarathunga - Business Analyst Portfolio](https://ssparamee.github.io/parameesamarathungaBA/)
 
 ---
 
