@@ -66,7 +66,3 @@ Visit the live portfolio site here:
 ## 📜 License
 This repository is licensed under the terms of the [LICENSE](LICENSE) file.
 
----
-
-### ✨ Tagline
-**Designing Knowledge. Driving Impact.**
